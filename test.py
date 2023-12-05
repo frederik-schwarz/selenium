@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 
 driver = webdriver.Chrome()
 
@@ -24,6 +25,15 @@ def kawsXnike():
     actions = ActionChains(driver)
     actions.move_to_element(find_shoes)
     actions.click(find_shoes)
+    actions.perform()
+    select_element = driver.find_element(
+        by=By.XPATH, value="//select[contains(@name, 'options')]"
+    )
+    actions.move_to_element(select_element)
+    select = Select(select_element)
+    select.select_by_index(3)
+    # select.select_by_value(" MEN'S 10 / WOMAN'S 12 ")
+    # print(size)
     actions.perform()
 
 
