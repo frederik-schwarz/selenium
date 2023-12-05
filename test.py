@@ -35,6 +35,12 @@ def kawsXnike():
     # select.select_by_value(" MEN'S 10 / WOMAN'S 12 ")
     # print(size)
     actions.perform()
+    find_add_to_cart = driver.find_element(
+        by=By.XPATH, value="//button[contains(@name, 'add')]"
+    )
+    actions.move_to_element(find_add_to_cart)
+    actions.click(find_add_to_cart)
+    actions.perform()
 
 
 if __name__ == "__main__":
