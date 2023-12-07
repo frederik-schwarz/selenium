@@ -48,10 +48,10 @@ def kawsXnike():
     actions.perform()
 
     find_checkout_button = driver.find_element(
-        by=By.XPATH, value="//button[contains(@name, 'checkout')]"
+        by=By.XPATH, value="//button[contains(@id, 'checkout')]"
     )
     actions.move_to_element(find_checkout_button)
-    actions.click(go_to_cart)
+    actions.click(find_checkout_button)
     actions.perform()
 
 
