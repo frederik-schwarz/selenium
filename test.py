@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
@@ -53,7 +55,10 @@ def kawsXnike():
     actions.move_to_element(find_checkout_button)
     actions.click(find_checkout_button)
     actions.perform()
+    time.sleep(2)
 
 
 if __name__ == "__main__":
     kawsXnike()
+
+# shipping https://www.stackry.com/en/shipping-calculator
